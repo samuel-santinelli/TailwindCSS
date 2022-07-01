@@ -1,5 +1,3 @@
-import React from "react";
-
 const DATA = () => {
   const user = {
     name: "Tom Cook",
