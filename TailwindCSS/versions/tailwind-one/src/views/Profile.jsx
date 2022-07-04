@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Loading from "../components/Loading";
 
 const Profile = () => {
-    return(
-        <div>
-            Tela de Perfil
-        </div>
-    )
-}
+  return (
+    <>
+      <Loading />
+      <div> Ola</div>
+    </>
+  );
+};
 
-export default Profile
+export default Profile;
