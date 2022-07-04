@@ -41,7 +41,7 @@ const Cards = () => {
   return (
     <div className="max-w-6xl mx-auto flex justify-center items-center">
       {setLeft < 0 ? (
-        <button >
+        <button>
           <img
             src={SetLeft}
             alt="setLeft"
@@ -62,15 +62,15 @@ const Cards = () => {
       )}
       {pizzas?.length > 0 ? (
         pizzas.map((item) => (
-          <div className="w-72 h-5/6 bg-[#1da1f2] flex justify-center items-center flex-col m-2">
-            <h1>{item.sabor}</h1>
+          <div className="w-72 h-5/6 bg-[#1da1f2] flex justify-center items-center flex-col m-2 ">
+            <h1 className="font-bold font-sans capitalize">{item.sabor}</h1>
             <h1>{item.tamanho}</h1>
             <h1>{item.valor}</h1>
           </div>
         ))
-        ) : (
+      ) : (
         <h1>Hoje estamos sem Pizzas!</h1>
-        )}
+      )}
       <img
         src={SetRight}
         alt="setRight"
