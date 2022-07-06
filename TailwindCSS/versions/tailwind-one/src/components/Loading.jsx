@@ -14,7 +14,7 @@ const Loading = () => {
   }, []);
   return (
     loading && (
-      <div className="h-screen flex justify-center items-center flex-col">
+      <div className="h-screen flex justify-center items-center flex-col bg-black">
         <IconsLoading />
       </div>
     )

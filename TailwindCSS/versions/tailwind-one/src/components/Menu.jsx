@@ -1,30 +1,31 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import Config from "../components/Config";
+import Logo from "../assets/images/logo.png"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-  { name: "Reports", href: "#", current: false },
+  { name: "Home", href: "#", current: true },
+  { name: "Pizzas", href: "#", current: false },
+  { name: "Bebidas", href: "#", current: false },
+  { name: "Sobremesas", href: "#", current: false },
+  { name: "Contato", href: "#", current: false },
 ];
 
 const Menu = () => {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-black">
       <>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-center h-16 ">
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <img
-                  className="h-8 w-8"
-                  src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                  className="h-10 w-10"
+                  src={Logo}
                   alt="Workflow"
                 />
               </div>

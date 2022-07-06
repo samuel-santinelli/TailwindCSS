@@ -20,6 +20,12 @@ module.exports = {
         }
       },
     },
+    fontFamily : {
+      'Sulphur Point': ['sans-serif'],
+    },
+    backgroudImage: {
+      'circle-background': "url('./src/assets/images/circleBackground.svg')",
+    }
   },
   plugins: [],
 };
