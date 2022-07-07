@@ -1,5 +1,3 @@
-import react from "react";
-
 const InfoPerfil = (props) => {
   const { name, email } = props;
   return (

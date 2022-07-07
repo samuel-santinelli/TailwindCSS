@@ -9,8 +9,8 @@ const Content = () => {
       <div>
         <header className="bg-black">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 bg-black">
-            <h1 className="text-3xl font-bold text-orange-300 flex justify-center font-Sulphur Point">
-              Confira os pratos do Dia!
+            <h1 className="text-5xl font-bold text-orange-300 flex justify-center font-Sulphur Point">
+              
             </h1>
           </div>
         </header>

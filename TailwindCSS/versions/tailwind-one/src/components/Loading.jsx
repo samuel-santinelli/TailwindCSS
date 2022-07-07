@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { BarLoader } from "react-spinners";
-import { GiFullPizza } from "react-icons/gi";
 import IconsLoading from "../assets/icons/IconsLoading";
 
 const Loading = () => {

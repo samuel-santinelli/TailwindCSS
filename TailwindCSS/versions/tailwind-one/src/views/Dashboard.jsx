@@ -2,6 +2,7 @@ import React from "react";
 import Content from "../components/Content";
 import Menu from "../components/Menu";
 import Banner from "../components/Banner";
+import TrackingStatus from "../components/TrackingStatus";
 
 const Dashboard = () => {
   return (
@@ -9,6 +10,7 @@ const Dashboard = () => {
       <Menu />
       <Banner/>
       <Content />
+      <TrackingStatus/>
     </div>
   );
 };
