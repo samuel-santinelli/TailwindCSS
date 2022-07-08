@@ -1,7 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 
-const MenuProfile = (props) => {
+const MenuProfile = () => {
   function classNames(...classes) {
     return classes.filter(Boolean).join(" ");
   }

@@ -1,16 +1,19 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SetLeft from "../assets/images/set-left.svg";
 import SetRight from "../assets/images/set-right.svg";
 import { TbPizzaOff } from "react-icons/tb";
 import PizzaQueijo from "../assets/images/pizzas/queijo.png";
 import Stars from "./Stars";
 import Like from "./Like";
+import Close from "../assets/images/close.svg";
 import PaginationComponent from "./PaginationComponent";
+import ButtonBuy from "./buy/Button";
 
 const Cards = () => {
   const [itensPerPage, setItensPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(0);
+  const [modal, setModal] = useState(false);
 
   const pizzas = [
     {
@@ -115,6 +118,10 @@ const Cards = () => {
 
   const [itens, setItens] = useState(pizzas);
 
+  const openModal = () => {
+    setModal(!modal);
+  };
+
   const pages = Math.ceil(itens.length / itensPerPage);
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
@@ -126,6 +133,37 @@ const Cards = () => {
     <>
       <div className="max-w-7xl h-5/6 flex justify-center items-center flex-col">
         <div className="h-96 flex justify-center">
+          {modal && (
+            <div className="bg-red-800 h-5/6 w-4/6 flex justify-center items-center absolute z-50 shadow-2xl">
+              <button onClick={() => setModal(!modal)}>
+                <img
+                  src={Close}
+                  alt="icon-close"
+                  className="h-20 -mt-80 -ml-40 absolute"
+                />
+              </button>
+              <div className="flex justify-center items-center text-center">
+                <img src={PizzaQueijo} alt="picture-pizzas" className="w-72" />
+                <div className="m-14 flex justify-center flex-col items-center">
+                  <h1 className="text-5xl text-white font-bold font-sans capitalize">
+                    Pizza de Queijo
+                  </h1>
+                  <h1 className="text-2xl text-white font-semibold font-sans capitalize mt-2">
+                    Médio
+                  </h1>
+                  <div className="flex flex-row">
+                    <h1 className="text-2xl text-white font-bold font-sans capitalize mt-2 mr-3 opacity-60 line-through ">
+                      R$ 245,54
+                    </h1>
+                    <h1 className="text-3xl text-white font-bold font-sans capitalize mt-2">
+                      R$ 245,54
+                    </h1>
+                  </div>
+                  <ButtonBuy />
+                </div>
+              </div>
+            </div>
+          )}
           {pizzas?.length > 0 ? (
             <button>
               <img
@@ -149,7 +187,13 @@ const Cards = () => {
                 key={key}
               >
                 <Like />
-                <img src={PizzaQueijo} alt="picture-pizzas" className="w-56" />
+                <button onClick={openModal}>
+                  <img
+                    src={PizzaQueijo}
+                    alt="picture-pizzas"
+                    className="w-56"
+                  />
+                </button>
                 <Stars />
 
                 <h1 className="text-3xl text-white font-bold font-sans capitalize">
