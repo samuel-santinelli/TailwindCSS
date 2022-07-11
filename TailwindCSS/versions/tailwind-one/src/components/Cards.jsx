@@ -139,11 +139,18 @@ const Cards = () => {
                 <img
                   src={Close}
                   alt="icon-close"
-                  className="h-20 -mt-80 -ml-40 absolute"
+                  className="h-20 -mt-80 -ml-32 absolute"
                 />
               </button>
               <div className="flex justify-center items-center text-center">
-                <img src={PizzaQueijo} alt="picture-pizzas" className="w-72" />
+                <div className="w-20 h-52 -mt-24 -ml-48 absolute flex shadow-md shadow-black bg-red-900 rounded-tr-lg justify-center items-center text-cyan-50 capitalize flex-col">
+                  <label className="text-base">calorias</label>
+                  <label className="font-bold text-lg">150</label>
+                  <label>---------</label>
+                  <label>tamanho</label>
+                  <label className="font-bold text-lg">médio</label>
+                </div>
+                <img src={PizzaQueijo} alt="picture-pizzas" className="w-96" />
                 <div className="m-14 flex justify-center flex-col items-center">
                   <h1 className="text-5xl text-white font-bold font-sans capitalize">
                     Pizza de Queijo
