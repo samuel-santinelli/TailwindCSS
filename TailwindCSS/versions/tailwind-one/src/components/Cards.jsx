@@ -15,6 +15,11 @@ const Cards = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [modal, setModal] = useState(false);
 
+  const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+  };
+
   const pizzas = [
     {
       picture:
@@ -129,6 +134,8 @@ const Cards = () => {
 
   // const randomPizzas = pizzas[Math.floor(Math.random() * pizzas.length)];
 
+  console.log("the pages is", currentItens);
+
   return (
     <>
       <div className="max-w-7xl h-5/6 flex justify-center items-center flex-col">
@@ -171,7 +178,9 @@ const Cards = () => {
               </div>
             </div>
           )}
-          {pizzas?.length > 0 ? (
+          {currentItens?.length < 1 ? (
+            <div></div>
+          ) : (
             <button>
               <img
                 onClick={() =>
@@ -184,8 +193,6 @@ const Cards = () => {
                 className="w-20 h-16 cursor-pointer "
               />
             </button>
-          ) : (
-            <div></div>
           )}
           {currentItens?.length > 0 ? (
             currentItens.map((item, key) => (
@@ -223,7 +230,7 @@ const Cards = () => {
             </div>
           )}
 
-          {pizzas?.length > 0 ? (
+          {currentItens?.length > 0 ? (
             <button>
               <img
                 src={SetRight}
@@ -236,7 +243,11 @@ const Cards = () => {
             <div></div>
           )}
         </div>
-        <PaginationComponent pages={pages} setCurrentPage={setCurrentPage} />
+        {currentItens?.length < 1 ? (
+          <div></div>
+        ) : (
+          <PaginationComponent pages={pages} setCurrentPage={setCurrentPage} />
+        )}
       </div>
     </>
   );
